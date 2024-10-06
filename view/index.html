@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KPD Shop</title>
+    <link rel="stylesheet" href="../style/styleHome.css">
+    <script src="../script/productInDislay.js"></script>
+    <script src="../script/cartJS/addToCart.js"></script>
+    <script src="../script/checkuser.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-top">
+            <span>Thế giới game thủ</span>
+        </div>
+        <div class="header-bottom">
+            <div class="logo">
+                <img src="../Image/image_Index/icon_Header/logo_Game.png" alt="Logo">
+                <span>KPD SHOP</span>
+            </div>
+            <div class="search-bar">
+                <label for="search" class="search-label">TÌM KIẾM</label>
+                <div class="search-input-container">
+                    <input type="text" id="search" placeholder="Tìm kiếm game..." oninput="searchProducts(this.value)">
+                    <button type="submit">
+                        <img src="../Image/image_Index/icon_Header/icon_Search.png" alt="Search Icon">
+                    </button>
+                </div>
+            </div>            
+            <div class="user-options" id="user-options">
+                <span><img src="../Image/image_Index/icon_Header/icon_User.png" alt="icon_User"></span>
+                <a href="./signUp/login.html">ĐĂNG NHẬP</a>
+                <span>/</span>
+                <a href="./signUp/register.html">ĐĂNG KÍ</a>
+            </div>
+        </div>
+        <nav class="main-nav">
+            <div class="secondary-nav">
+                <span><img src="../Image/image_Index/icon_Header/icon_home.png" alt="icon_User"></span>
+                <a href="./index.html">HOME</a>
+            </div>
+            <div class="secondary-nav">
+                <span><img src="../Image/image_Index/icon_Header/icon_cart.png" alt="icon_User"></span>
+                <a href="./cart_payment/cart.html">GIỎ HÀNG</a>
+            </div>
+            <div class="secondary-nav">
+                <span><img src="../Image/image_Index/icon_Header/icon_heart.png" alt="icon_User"></span>
+                <a href="#">YÊU THÍCH</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Body -->
+
+    <div class="filter-container">
+        <div class="dropdown">
+            <label for="category">Thể loại</label>
+            <select id="category" onchange="filterProducts(getFilter())">
+                <option value="all">Tất cả</option>
+                <option value="option1">Hành động</option>
+                <option value="option2">Phiêu lưu</option>
+                <option value="option3">Nhập vai</option>
+                <option value="option4">Giải đố</option>
+            </select>
+        </div>
+
+        <div class="slider-container">
+            <input type="number" id="min-value" value="0" min="0" onchange="filterProducts(getFilter())">
+            <input type="number" id="max-value" value="5000000" max="5000000" onchange="filterProducts(getFilter())">
+        </div>
+    </div>
+
+    <main id="list-game">
+       //Thêm game mới
+    </main>
+    
+
+    <!-- Footer -->
+    <footer>
+        <div class="payment-methods">
+            <img src="../Image/image_Index/icon_Footer/icon_Momo.png" alt="MOMO">
+            <img src="../Image/image_Index/icon_Footer/icon_Vnpay.png" alt="VNPAY">
+            <img src="../Image/image_Index/icon_Footer/icon_Visa.png" alt="VISA">
+            <img src="../Image/image_Index/icon_Footer/icon_MasterCard.png" alt="MasterCard">
+            <span>và nhiều hình thức thanh toán khác</span>
+        </div>
+        <div class="footer-content">
+            <div class="social-media">
+                <a href="#"><img src="../Image/image_Index/icon_Footer/icon_Facebook.png" alt="Facebook"></a>
+                <a href="#"><img src="../Image/image_Index/icon_Footer/icon_Ytb.png" alt="YouTube"></a>
+                <a href="#"><img src="../Image/image_Index/icon_Footer/icon_Ins.png" alt="Instagram"></a>
+            </div>
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h3>GIỚI THIỆU</h3>
+                    <ul>
+                        <li><a href="#">Game bản quyền là gì?</a></li>
+                        <li><a href="#">Giới thiệu KPD Shop</a></li>
+                        <li><a href="#">Điều khoản dịch vụ</a></li>
+                        <li><a href="#">Chính sách bảo mật</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>TÀI KHOẢN</h3>
+                    <ul>
+                        <li><a href="#">Đăng nhập</a></li>
+                        <li><a href="#">Đăng ký</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>LIÊN HỆ</h3>
+                    <ul>
+                        <li>Hotline tự động <span class="highlight">1900 xxxx</span></li>
+                        <li><a href="#">Liên hệ Hỗ trợ</a></li>
+                        <li><a href="#">Chat với CSKH</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

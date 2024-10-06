@@ -1,0 +1,346 @@
+/* Basic Reset */
+:root{
+    --primary-color: #0A59CC;
+    --secondary-color: #2579F2;
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body and Main Layout */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
+    padding: 20px;
+}
+
+/* Header Styles */
+header {
+    background-color: var(--primary-color); /* Màu nền xanh */
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+.header-top {
+    background-color: var(--priamry-color); /* Màu xanh đậm hơn cho phần trên */
+    text-align: right;
+    padding: 5px 20px;
+    font-size: 0.9em;
+    border-bottom: #fff solid 1px;
+}
+
+.header-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15%;
+}
+
+.logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logo img {
+    width: 80px;
+    height: auto;
+}
+
+.logo span{
+    font-size: 1em;
+    font-weight: bold;
+    margin-top: -10px;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Khoảng cách giữa label và thanh tìm kiếm */
+    margin-left: 10px;
+}
+
+.search-label {
+    font-size: 1em;
+    color: white;
+}
+
+.search-input-container {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border-radius: 20px;
+    padding: 5px;
+}
+
+.search-input-container input {
+    border: none;
+    padding: 5px;
+    width: 450px;
+    border-radius: 20px;
+    outline: none;
+}
+
+.search-input-container button {
+    background: none;
+    border: none;
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+.search-input-container button img {
+    width: 20px;
+    height: auto;
+    margin-right: 10px;
+}
+
+.user-options {
+    display: flex;
+    align-items: center;
+}
+
+.user-options a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+.user-options img {
+    width: 40px;
+    height: auto;
+}
+
+.main-nav {
+    display: flex;
+    justify-content: center;
+    background-color: var(--secondary-color); /* Màu xanh đậm hơn cho thanh điều hướng */
+    text-align: center;
+    padding: 6px 0;
+    gap: 80px;
+}
+
+.main-nav a {
+    color: white;
+    margin-left: 5px;
+    text-decoration: none;
+    font-size: 1.1em; 
+}
+
+.main-nav a:hover {
+    text-decoration: underline;
+}
+.secondary-nav {
+    display: flex;
+    align-items: center;
+}
+
+.secondary-nav img{
+    margin-top: 3px;
+    width: 26px;
+    height: auto;
+}
+
+.secondary-nav img:hover{
+    cursor: pointer;
+}
+
+/* Product Card Styles */
+
+.filter-container {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.dropdown {
+    margin-right: 20px;
+}
+
+.dropdown select {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+input [type="range"]{
+    width: 100%;
+    margin-top: 10px;
+}
+
+.slider-container {
+    display: flex;
+    align-items: center;
+    width: 300px;
+}
+
+.slider-container input[type="number"] {
+    width: 80px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: center;
+    margin: 0 10px;
+    font-size: 16px ;
+    appearance: textfield;
+    -moz-appearance: textfield;
+}
+
+/* --------------------------------------- */
+main {
+    padding: 30px 50px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+    gap: 50px;
+
+}
+
+.product-card {
+    height: 290px;
+    max-width: 290px;
+    border-radius: 10px;
+    max-width: 300px;
+}
+
+.product-card img {
+    width: 300px;
+    height: 142px;
+    border-radius: 10px;
+}
+
+p.game-name{
+    margin: 2px 0;
+    font-size: 1.1em;
+}
+.category{
+    display: flex;
+    font-weight: bold;
+}
+
+p.category-name{
+    font-size: 1em;
+    font-weight: lighter;
+}
+
+p.price{
+    font-weight: bold;    
+}
+
+
+.product-card button:hover {
+    background-color: #4f94f5;
+}
+
+.add-to-cart {
+    background-color: #2579f2; /* Green */
+    border: none;
+    color: white;
+    padding: 10px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 0px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+    justify-content: flex-end;
+}
+
+.add-to-cart-container {
+    display: flex;
+    justify-content: flex-end; /* Căn chỉnh nút về phía bên phải */
+}
+
+
+/* Footer Styles */
+footer {
+    margin-top: 50px;
+    background-color: #f5f5f5;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.payment-methods {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    padding-left: 15%;
+}
+
+.payment-methods img {
+    height: 30px;
+    width: auto;
+}
+
+.payment-methods span {
+    font-size: 1em;
+    color: #666;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 10%;
+    border-top: 1px solid #ccc;
+}
+
+.social-media {
+    display: flex;
+    gap: 15px;
+    padding-left: 6.2%;
+}
+
+.social-media a img {
+    width: 30px;
+    height: auto;
+}
+
+.footer-links {
+    display: flex;
+    gap: 50px;
+    margin-right: 6.1%;
+}
+
+.footer-column h3 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.footer-column ul {
+    list-style-type: none;
+}
+
+.footer-column ul li {
+    margin-bottom: 8px;
+}
+
+.footer-column ul li a {
+    text-decoration: none;
+    color: #666;
+    font-size: 0.9em;
+}
+
+.footer-column ul li a:hover {
+    color: #333;
+}
+
+.footer-column ul li .highlight {
+    color: red;
+    font-weight: bold;
+}
+

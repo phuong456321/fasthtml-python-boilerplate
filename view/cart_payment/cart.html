@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Web Page Layout</title>
+    <link rel="stylesheet" href="../../style/styleCart.css">
+    <script src="../../script/cartJS/loadCart.js"></script>
+    <script src="../../script/checkuser.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-top">
+            <span>Thế giới game thủ</span>
+        </div>
+        <div class="header-bottom">
+            <div class="logo">
+                <img src="../../Image/image_Index/icon_Header/logo_Game.png" alt="Logo">
+                <span>KPD SHOP</span>
+            </div>
+            <div class="search-bar">
+                <label for="search" class="search-label">TÌM KIẾM</label>
+                <div class="search-input-container">
+                    <input type="text" id="search" placeholder="I'm shopping for...">
+                    <button type="submit">
+                        <img src="../../Image/image_Index/icon_Header/icon_Search.png" alt="Search Icon">
+                    </button>
+                </div>
+            </div>            
+            <div class="user-options" id="user-options">
+                <span><img src="../../Image/image_Index/icon_Header/icon_User.png" alt="icon_User"></span>
+                <a href="./signUp/login.html">ĐĂNG NHẬP</a>
+                <span>/</span>
+                <a href="./signUp/register.html">ĐĂNG KÍ</a>
+            </div>
+        </div>
+        <nav class="main-nav">
+            <div class="secondary-nav">
+                <span><img src="../../Image/image_Index/icon_Header/icon_home.png" alt="icon_User"></span>
+                <a href="../index.html">HOME</a>
+            </div>
+            <div class="secondary-nav">
+                <span><img src="../../Image/image_Index/icon_Header/icon_cart.png" alt="icon_User"></span>
+                <a href="./cart.html">GIỎ HÀNG</a>
+            </div>
+            <div class="secondary-nav">
+                <span><img src="../../Image/image_Index/icon_Header/icon_heart.png" alt="icon_User"></span>
+                <a href="#">YÊU THÍCH</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Body -->
+    <div class="cart-container">
+        <div class="cart-items">
+            <div class="cart-header">
+                <label><input type="checkbox" id="select-all" onchange="selectAllProducts()"> Chọn tất cả</label>
+                    <span id="span1">Đơn giá</span>
+                    <span id="span2">Số lượng</span>
+                    <span id="span3">Thành tiền</span>
+            </div>
+
+            <!-- Sản phẩm sẽ được thêm ở đây -->  
+        </div>
+<!-- ------------------------------------- -->
+        <div class="cart-summary">
+            <h3>Thanh toán</h3>
+            <div class="checkout">
+                <p>Thành tiền: <span></span> (Đã bao gồm VAT)</p>
+                <button class="checkout-btn" onclick="checkout()">Mua hàng</button>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Footer -->
+    <footer>
+        <div class="payment-methods">
+            <img src="../../Image/image_Index/icon_Footer/icon_Momo.png" alt="MOMO">
+            <img src="../../Image/image_Index/icon_Footer/icon_Vnpay.png" alt="VNPAY">
+            <img src="../../Image/image_Index/icon_Footer/icon_Visa.png" alt="VISA">
+            <img src="../../Image/image_Index/icon_Footer/icon_MasterCard.png" alt="MasterCard">
+            <span>và nhiều hình thức thanh toán khác</span>
+        </div>
+        <div class="footer-content">
+            <div class="social-media">
+                <a href="#"><img src="../Image/image_Index/icon_Footer/icon_Facebook.png" alt="Facebook"></a>
+                <a href="#"><img src="../Image/image_Index/icon_Footer/icon_Ytb.png" alt="YouTube"></a>
+                <a href="#"><img src="../Image/image_Index/icon_Footer/icon_Ins.png" alt="Instagram"></a>
+            </div>
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h3>GIỚI THIỆU</h3>
+                    <ul>
+                        <li><a href="#">Game bản quyền là gì?</a></li>
+                        <li><a href="#">Giới thiệu Divine Shop</a></li>
+                        <li><a href="#">Điều khoản dịch vụ</a></li>
+                        <li><a href="#">Chính sách bảo mật</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>TÀI KHOẢN</h3>
+                    <ul>
+                        <li><a href="#">Đăng nhập</a></li>
+                        <li><a href="#">Đăng ký</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>LIÊN HỆ</h3>
+                    <ul>
+                        <li>Hotline tự động <span class="highlight">1900 xxxx</span></li>
+                        <li><a href="#">Liên hệ Hỗ trợ</a></li>
+                        <li><a href="#">Chat với CSKH</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="../../script/payments/payments.js"></script>
+</body>
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Web Page Layout</title>
+    <link rel="stylesheet" href="../../style/managerPrdStyle.css">
+    <script src="../../script/productJS/createProduct.js"></script>
+    <script src="../../script/productJS/editProduct.js"></script>
+    <script src="../../script/checkuser.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-top">
+            <span>Thế giới game thủ</span>
+        </div>
+        <div class="header-bottom">
+            <div class="logo">
+                <img src="../../Image/image_Index/icon_Header/logo_Game.png" alt="Logo">
+                <span>KPD SHOP</span>
+            </div>
+            <div class="search-bar">
+                <label for="search" class="search-label">TÌM KIẾM</label>
+                <div class="search-input-container">
+                    <input type="text" id="search" placeholder="I'm shopping for...">
+                    <button type="submit">
+                        <img src="../../Image/image_Index/icon_Header/icon_Search.png" alt="Search Icon">
+                    </button>
+                </div>
+            </div>            
+            <div class="user-options" id="user-options">
+                <span><img src="../../Image/image_Index/icon_Header/icon_User.png" alt="icon_User"></span>
+                <a href="./signUp/login.html">ĐĂNG NHẬP</a>
+                <span>/</span>
+                <a href="./signUp/register.html">ĐĂNG KÍ</a>
+            </div>
+        </div>
+        <nav class="main-nav">
+            <div class="secondary-nav">
+                <span><img src="../../Image/image_Index/icon_Header/icon_home.png" alt="icon_User"></span>
+                <a href="../index.html">HOME</a>
+            </div>
+            <div class="secondary-nav">
+                <span><img src="../../Image/image_Index/icon_Header/icon_cart.png" alt="icon_User"></span>
+                <a href="../cart_payment/cart.html">GIỎ HÀNG</a>
+            </div>
+            <div class="secondary-nav">
+                <span><img src="../../Image/image_Index/icon_Header/icon_heart.png" alt="icon_User"></span>
+                <a href="#">YÊU THÍCH</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Body -->
+    <div class="create-product">
+        <form id="productForm" onsubmit="event.preventDefault();">
+            <input type="hidden" id="productId" />
+            <div>
+                <label for="productName">Tên Game:</label>
+                <input type="text" id="productName" required />
+            </div>
+            <div>
+                <label for="productPrice">Giá:</label>
+                <input type="number" id="productPrice" step="0.01" required />
+            </div>
+            <div>
+                <label for="category">Danh Mục:</label>
+                <select id="category">
+                    <option value="Hành động">Hành động</option>
+                    <option value="Phiêu lưu">Phiêu lưu</option>
+                    <option value="Nhập vai">Nhập vai</option>
+                    <option value="Giải đố">Giải đố</option>
+                </select>
+            </div>
+            <div>
+                <label for="productImage">Hình Ảnh:</label>
+                <input type="file" id="productImage" accept="image/*" onchange="previewImage(event)" />
+                <img id="previewImag" src="" alt="preview" style="max-width: 200px; display: none;" />
+            </div>
+            <button type="button" onclick="createProduct()">Thêm</button>
+            <button
+                type="button"
+                id="updateButton"
+                onclick="updateProduct(document.getElementById('productId').value)"
+                style="display: none">
+                Cập nhập
+            </button>
+        </form>
+    </div>
+
+    <main id="listGame">
+        <!-- Sản phẩm mới sẽ được thêm ở đây -->
+    </main>
+    
+
+    <!-- Footer -->
+    <footer>
+        <div class="payment-methods">
+            <img src="../../Image/image_Index/icon_Footer/icon_Momo.png" alt="MOMO">
+            <img src="../../Image/image_Index/icon_Footer/icon_Vnpay.png" alt="VNPAY">
+            <img src="../../Image/image_Index/icon_Footer/icon_Visa.png" alt="VISA">
+            <img src="../../Image/image_Index/icon_Footer/icon_MasterCard.png" alt="MasterCard">
+            <span>và nhiều hình thức thanh toán khác</span>
+        </div>
+        <div class="footer-content">
+            <div class="social-media">
+                <a href="#"><img src="../../Image/image_Index/icon_Footer/icon_Facebook.png" alt="Facebook"></a>
+                <a href="#"><img src="../../Image/image_Index/icon_Footer/icon_Ytb.png" alt="YouTube"></a>
+                <a href="#"><img src="../../Image/image_Index/icon_Footer/icon_Ins.png" alt="Instagram"></a>
+            </div>
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h3>GIỚI THIỆU</h3>
+                    <ul>
+                        <li><a href="#">Game bản quyền là gì?</a></li>
+                        <li><a href="#">Giới thiệu KPD Shop</a></li>
+                        <li><a href="#">Điều khoản dịch vụ</a></li>
+                        <li><a href="#">Chính sách bảo mật</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>TÀI KHOẢN</h3>
+                    <ul>
+                        <li><a href="#">Đăng nhập</a></li>
+                        <li><a href="#">Đăng ký</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>LIÊN HỆ</h3>
+                    <ul>
+                        <li>Hotline tự động <span class="highlight">1900 xxxx</span></li>
+                        <li><a href="#">Liên hệ Hỗ trợ</a></li>
+                        <li><a href="#">Chat với CSKH</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          loadProductList();
+        });
+      </script>
+
+      <!-- Link to external JavaScript file -->
+      <script src="../../script/productJS/productCRUD.js"></script>
+
+</body>
+</html>
